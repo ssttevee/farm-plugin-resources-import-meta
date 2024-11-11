@@ -1,0 +1,56 @@
+{
+  "name": "farm-plugin-resources-import-meta",
+  "version": "0.0.0",
+  "main": "scripts/index.js",
+  "types": "scripts/index.d.ts",
+  "type": "module",
+  "license": "MIT",
+  "devDependencies": {
+    "@farmfe/plugin-tools": "latest"
+  },
+  "author": "ssttevee <stevyo99@yahoo.ca>",
+  "repository": "github:ssttevee/farm-plugin-resources-import-meta",
+  "napi": {
+    "name": "farm_plugin_resources_import_meta",
+    "triples": {
+      "additional": [
+        "aarch64-apple-darwin",
+        "aarch64-unknown-linux-gnu",
+        "aarch64-unknown-linux-musl",
+        "x86_64-unknown-linux-musl",
+        "i686-pc-windows-msvc",
+        "aarch64-pc-windows-msvc"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "import": "./scripts/func.js",
+      "types": "./scripts/index.d.ts",
+      "default": "./scripts/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dev": "cargo watch -w src -s 'scripts/watch.sh'",
+    "bump": "npx changeset version",
+    "build": "farm-plugin-tools build --platform --cargo-name farm_plugin_resources_import_meta -p farm_plugin_resources_import_meta --release",
+    "prepublishOnly": "farm-plugin-tools prepublish"
+  },
+  "files": [
+    "scripts",
+    "global.d.ts",
+    "options.d.ts"
+  ],
+  "optionalDependencies": {
+    "farm-plugin-resources-import-meta-darwin-arm64": "0.0.0",
+    "farm-plugin-resources-import-meta-darwin-x64": "0.0.0",
+    "farm-plugin-resources-import-meta-linux-arm64-gnu": "0.0.0",
+    "farm-plugin-resources-import-meta-linux-arm64-musl": "0.0.0",
+    "farm-plugin-resources-import-meta-linux-x64-gnu": "0.0.0",
+    "farm-plugin-resources-import-meta-linux-x64-musl": "0.0.0",
+    "farm-plugin-resources-import-meta-win32-arm64-msvc": "0.0.0",
+    "farm-plugin-resources-import-meta-win32-ia32-msvc": "0.0.0",
+    "farm-plugin-resources-import-meta-win32-x64-msvc": "0.0.0"
+  }
+}

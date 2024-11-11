@@ -1,0 +1,13 @@
+[package]
+edition = "2021"
+name = "farm_plugin_resources_import_meta"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+farmfe_core = "0.7.0"
+farmfe_macro_plugin = "0.0.4"
+farmfe_toolkit = "0.0.14"
+farmfe_toolkit_plugin_types = "0.0.21"
